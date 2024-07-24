@@ -21,3 +21,17 @@ fork 생성! Owner를 본인으로 놓고 생성하면 됨!
 > git commit -m [커밋 메시지]
 > git push origin
 ```
+
+## 1.3 PR 날리기
+
+1. 직접 깃허브에 본인 깃허브 디렉토리로 이동
+
+2. Pull-requests로 이동, New pull request 이동
+
+![img.png](img/readme_main/pull_request_image.png)
+
+3. Pull request 생성, 주의 사항은 본인이 작성한 페이지로 이동해야 함.
+
+![img_1.png](img/readme_main/pull_request.png)
+
+4. request 날리면 카톡으로 *** PR 확인 요청 부탁 ***

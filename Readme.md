@@ -1,12 +1,15 @@
 # 1. 파일 변경 관련 규칙
 ## 1.1 Github 내 프로젝트 클론
 
-![img.png](img/readme_main/img.png)
+메인 프로젝트 fork!
+![img.png](img/readme_main/clone_image.png)
+
+fork 생성! Owner를 본인으로 놓고 생성하면 됨!
+![img.png](img/readme_main/fork_image.png)
 
 ## 1.2 인텔리제이 IDE 접속 및 커맨드
 
-따로 fork를 안할 거고 main에 바로 임의의 브랜치 따로 파서 사용할 것임.
-개인적으로 작업할 브랜치 본인이름이나 아무거나 따로 파서 사용해도 괜찮음. 이후에 작업 완료되면 PR 내용 보고 병합하겠음.
+따로 fork해서 dev나 뭐 아무 이름 브랜치 생성해서 PR 보내고 카톡 남기면 됨. 개인적으로 확인하고 PR 내용 보고 병합하겠음.
 ```shell
 데이터 가져오기
 > git clone [복사URL]

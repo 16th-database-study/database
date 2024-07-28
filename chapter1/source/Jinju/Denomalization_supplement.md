@@ -22,7 +22,12 @@
 
 
 
+
 #### Ref.
 [SQLD 데이터모델과 성능 : 성능모델링, 정규화, 반정규화, 파티셔닝, 슈퍼/서브타입 성능, PK/FK 성능, 분산데이터베이스](https://lotuus.tistory.com/49)
+
+
 [[Mysql, Querydsl] 반정규화를 통한 조회 성능 개선 (트래픽 부하 테스트)](https://tjdtls690.github.io/studycontents/java/2023-11-03-select_perform_improve/)
+
+
 [좋아요 개수 조회 최적화하기](https://tecoble.techcourse.co.kr/post/2022-10-10-like-count/)

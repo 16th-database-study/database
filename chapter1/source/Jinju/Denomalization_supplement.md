@@ -30,9 +30,10 @@
 
 [우아한 테크코스 프로젝트 팀: 좋아요 수 조회에 걸리는 시간을 반정규화로 개선](https://tecoble.techcourse.co.kr/post/2022-10-10-like-count/)
 
-     - like 테이블에서 join을 통해 수를 일일히 조회하는 방식에서, like_count 컬럼을 추가하여 join 하지 않고도 그 수를 확인할 수 있게 만들었다.
+     - like 테이블에서 join을 통해 수를 일일히 조회하는 방식 -> like_count 컬럼을 추가
      - 다만, like 테이블에서 삽입, 삭제, 수정이 일어날 때 동시성 문제가 발생하는데 이를 Sync Schedule 으로 해결했다.
  
+
 
 #### Ref.
 [SQLD 데이터모델과 성능 : 성능모델링, 정규화, 반정규화, 파티셔닝, 슈퍼/서브타입 성능, PK/FK 성능, 분산데이터베이스](https://lotuus.tistory.com/49)

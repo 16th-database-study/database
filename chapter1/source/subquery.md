@@ -55,7 +55,7 @@ where name = (select name
 
 [오류 화면]
 
-![img.png](PaikMyeongGyu/img.png)
+![img.png](image/PaikMyeongGyu/img.png)
 
 ---
 
@@ -133,7 +133,7 @@ select * from (select * from employee where office_worker = '사원') as e1,
 
 그러면 아래와 같이 매 서브쿼리마다 Full Table이 반복적으로 일어나고 이를 Hash join하는 방법으로 처리했음을 확인할 수 있다.
 
-![img.png](PaikMyeongGyu/subquery_plan.png)
+![img.png](image/PaikMyeongGyu/subquery_plan.png)
 
 [데이터 I/O 비용 발생]
 연산 결과를 어딘가에 저장하기 위해 써야 하는데, 메모리 용량이 충분하다면 메모리에 작성한다. 

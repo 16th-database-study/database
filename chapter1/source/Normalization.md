@@ -62,11 +62,11 @@
 * 속성 간의 함수 종속성 : 화살표
 * 복합 속성 : 직사각형으로 묶어서 표현
 
-![before_diagram](image/before_diagram.png)
+![before_diagram](image/MoonJinSu/before_diagram.png)
 
 [위 테이블의 함수적 종속 관계를 다이어그램으로 표현]
 
-![after_diagram](image/after_diagram.png)
+![after_diagram](image/MoonJinSu/after_diagram.png)
 
 정규화 과정을 거쳐서 테이블을 분해하면 위와 같은 다이어그램을 도출할 수 있다. 이제부터 1, 2, 3 정규화 각각에 대해서 알아보자.
 
@@ -269,7 +269,7 @@ BCNF 정규화를 통해서 이러한 중복 저장을 해결할 수 있다. 아
 
 ### 반정규화 도입 절차
 
-![sequence](image/de-normalization-seq.png)
+![sequence](image/MoonJinSu/de-normalization-seq.png)
 
 반정규화는 데이터의 중복이 발생하고 무결성 문제가 발생할 수 있기 때문에 다른 방법으로 개선할 수 있는지 먼저 찾아본 후에 도입하는 것이 좋다.
 
@@ -277,7 +277,7 @@ BCNF 정규화를 통해서 이러한 중복 저장을 해결할 수 있다. 아
 
 ### 중복 컬럼 / 테이블 사전 조인 방식 (redundant column/Pre-joining tables)
 
-![column-de](image/column-de.png)
+![column-de](image/MoonJinSu/column-de.png)
 
 **중복된 컬럼을 추가해서 데이터 조회 성능을 향상시키는 방법이다.**
 
@@ -291,7 +291,7 @@ Customer - Order 는 1:N 관계이기 때문에 Order의 수만큼 고객 이름
 
 ### 수평 테이블 분할 (Horizontal table splitting)
 
-![horizontal-split](image/horizontal-split.png) 
+![horizontal-split](image/MoonJinSu/horizontal-split.png) 
 
 **테이블을 행 단위로 분할하는 방식이다.**
 
@@ -301,7 +301,7 @@ Customer - Order 는 1:N 관계이기 때문에 Order의 수만큼 고객 이름
 
 ### 수직 테이블 분할 (Vertical table splitting)
 
-![vertical-split](image/vertical-split.png)
+![vertical-split](image/MoonJinSu/vertical-split.png)
 
 **테이블을 컬럼을 기준으로 분할하는 방식이다.**
 
@@ -313,7 +313,7 @@ Customer - Order 는 1:N 관계이기 때문에 Order의 수만큼 고객 이름
 
 ### 파생 열 추가 (Adding derived columns)
 
-![derived-column](image/derived-column.png)
+![derived-column](image/MoonJinSu/derived-column.png)
 
 **통계 정보나 계산해서 제공해야 하는 데이터를 미리 컬럼에 저장해두는 방식이다.**
 

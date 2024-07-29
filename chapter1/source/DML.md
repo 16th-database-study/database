@@ -6,7 +6,7 @@
 
 DML은 데이터베이스에 입력된 레코드를 조회, 수정, 삭제하는 등의 역할을 하는 언어를 지칭한다.
 
-![DML](image/DML.png)
+![DML](image/MoonJinSu/DML.png)
 
 [이미지 출처] : [https://jinendra-singh.medium.com/sql-dml-commands-chapter-3-642dd073898b](https://jinendra-singh.medium.com/sql-dml-commands-chapter-3-642dd073898b)
 
@@ -22,7 +22,7 @@ Select는 DB로부터 데이터를 조회할 때 사용된다.
 
 Select 쿼리는 FROM & JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT 순으로 실행된다. 이를 시각화하면 아래와 같다.
 
-![Select-order](image/Select-order.png)
+![Select-order](image/MoonJinSu/Select-order.png)
 
 [이미지 출처] : [https://jaehoney.tistory.com/191](https://jaehoney.tistory.com/191)
 
@@ -124,7 +124,7 @@ GROUP BY m.id;
 
 조건절에서 별도의 함수를 쓰는 것보다 안 쓰는게 성능이 더 좋다.
 
-![Query-time](image/Query-time.png)
+![Query-time](image/MoonJinSu/Query-time.png)
 
 * 위의 쿼리의 경우 Table Full Scan을 하면서 모든 값을 탐색하고, 수식을 적용한 후 조건이 만족하는 지 판단한다. 
 * 아래 쿼리의 경우 r.value가 가지고 있는 인덱스를 사용할 수 있기 때문에 모든 데이터를 탐색할 필요가 없다.
@@ -174,7 +174,7 @@ GROUP BY    g.value
 
 여기서도 마찬가지로 "%Comedy" 는 Table Full Scan을 사용하고 나머지는 Index를 사용하여 스캔한다. 성능 비교는 아래와 같다.
 
-![Query-time-2](image/Query-time-2.png)
+![Query-time-2](image/MoonJinSu/Query-time-2.png)
 
 **Quetsion) LIKE를 사용할 때 "...%"를 쓰면 항상 Index를 사용하여 스캔할까?** 
 
@@ -205,7 +205,7 @@ GROUP BY id ;
 
 쿼리 실행 순서가 WHERE 절이 먼저이기 때문에 미리 테이블의 크기를 작게 만들어서 GROUP BY에서 다뤄야 하는 데이터의 크기를 줄일 수 있다.
 
-![Query-time-2](image/Query-time-3.png)
+![Query-time-2](image/MoonJinSu/Query-time-3.png)
 
 
 
@@ -230,7 +230,7 @@ ON r.movie_id = g.movie_id;
 
 하지만 위의 최적화는 항상 통용되지는 않는다. 간단한 INNER JOIN의 경우 Query Planner 가 가장 효율적인 순서를 탐색해서 INNER JOIN의 순서를 바꾼다. A, B 쿼리의 경우 실행 시간의 차이가 없다.
 
-![Query-time-4](image/Query-time-4.png)
+![Query-time-4](image/MoonJinSu/Query-time-4.png)
 
 테이블의 개수가 늘어나면 INNER JOIN 순서의 경우의 수가 많아질 것이다. 그리고 이는 Planining 비용의 증가로 이어진다. 결국 어느 임계점을 넘으면 Planning 비용을 지불하고 가장 최적의 쿼리를 찾는 것보다 차선의 INNER JOIN 순서로 쿼리를 실행시켜 Planning 비용을 줄이는 게 더 효율적일 수 있다. 따라서 작성할 때 INNER JOIN의 순서를 잘 정해서 세팅해두는 게 도움이 될 수 있다.
 

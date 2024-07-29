@@ -104,7 +104,7 @@ ERROR 1062 (23000): Duplicate entry '3' for key 'PRIMARY'
 
 ### 트랜잭션 상태
 
-![Tx-Process](image/Tx-Process.png)
+![Tx-Process](image/MoonJinSu/Tx-Process.png)
 
 Activce, Failed, Commited, Aborted는 문자 그대로의 의미이다. 여기서는 **Partially Committed** 에 대해서만 설명하고 넘어가겠다.
 
@@ -181,7 +181,7 @@ Oracle에서는 DDL을 수행하면 묵시적 트랜잭션으로 처리되고, D
 
 ### 로그 플러시
 
-![Tx-Performance](image/Tx-performance.png)
+![Tx-Performance](image/MoonJinSu/Tx-performance.png)
 
 [사진 출처] : [https://sqlconjuror.com/mariadb-mysql-innodb_flush_log_at_trx_commit/](https://sqlconjuror.com/mariadb-mysql-innodb_flush_log_at_trx_commit/)
 

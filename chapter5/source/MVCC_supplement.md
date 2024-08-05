@@ -4,7 +4,7 @@
 
 ### MVCC 성능
 
-MVCC가 이전의 Lock-base로 동작할때는 읽기 연산끼리만 동시 처리가 가능하고 나머지는 모두 불가능했다. 때문에 TPS가 낮았고 이를 해결하기 위해서 대부분의 RDBMS가 MVCC 기능을 사용하고 있다.
+MVCC 이전의 Lock-base로 동작할때는 읽기 연산끼리만 동시 처리가 가능하고 나머지는 모두 불가능했다. 때문에 TPS가 낮았고 이를 해결하기 위해서 대부분의 RDBMS가 MVCC 기능을 사용하고 있다.
 
 <img src="image/compare.png">
 

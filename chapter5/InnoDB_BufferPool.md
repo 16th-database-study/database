@@ -1,7 +1,11 @@
 ## MySQL의 스토리지 엔진
+
+
+![storage](https://github.com/Pearl-K/database_study/blob/main/chapter5/source/image/storage.png)
 - MySQL에서 실제 Data를 디스크 스토리지에 저장하거나 읽어오는 부분을 담당한다.
 - 그림 처럼 스토리지 엔진을 플러그인 방식으로 사용할 수 있는 구조를 가지기 때문에 필요에 따라 원하는 스토리지 엔진을 구성하여 사용할 수 있다.
 - show [storage] engines 명령을 통해 스토리지 엔진 목록을 확인 가능하고, 테이블이 사용할 스토리지 엔진을 지정해줄 수 있다.
+
 
 
 ## InnoDB
@@ -18,7 +22,7 @@
 ![list of buffer blocks](https://github.com/Pearl-K/database_study/blob/main/chapter5/source/image/bufferblocks.png)
 
 
-### InnoDB 스토리지 엔진은 Buffer Pool 관리를 위해서 Free 리스트, LRU(Least Recently Used) 리스트, Flush  리스트 3개의 자료 구조로 관리한다.
+#### InnoDB 스토리지 엔진은 Buffer Pool 관리를 위해서 Free 리스트, LRU(Least Recently Used) 리스트, Flush  리스트 3개의 자료 구조로 관리한다.
 - Free List
   - 버퍼 풀에서 실제 사용자 데이터로 채워 지지 않은 비어있는 페이지 목록
   - 사용자의 쿼리가 새롭게 디스크 데이터 페이지를 읽어와야 할 때 사용한다.
@@ -38,30 +42,31 @@
 
 
 ### InnoDB에서 디스크에 데이터 쓰는 방법 3가지
-1. 단일 페이지 플러시 (Single Page Flush)
+1. Single Page Flush
 - 사용자의 요청에 의해 발생하는 단일 페이지 쓰기 작업
 - 이 방법은 주로 버퍼 풀에서 다른 데이터를 저장하기 위해 현재 페이지를 교체할 때 사용된다.
 - 사용 시점: 즉시 필요한 경우에, 페이지가 교체 대상(victim)으로 선택되었을 때 사용된다.
 
 
-2. LRU 꼬리 플러시 (LRU Tail Flush)
-- 백그라운드 프로세스에 의해 비동기적으로 수행되는 쓰기 작업
+2. LRU tail flush
+- 주로 백그라운드 프로세스에 의해 비동기적으로 수행되는 쓰기 작업
 - 주로 사용되지 않는 cold 페이지를 버퍼 풀에서 제거하기 위해 사용된다.
 - 사용 시점: 버퍼 풀의 공간을 확보하기 위해 LRU 리스트의 끝부분에 있는 페이지를 디스크에 기록하고 버퍼에서 제거할 때 사용된다.
 
 
-3. 체크포인팅 (Checkpointing)
+3. Checkpointing
 - DB 복구를 위해 백그라운드 프로세스가 비동기적으로 수행하는 쓰기 작업
-- 이 방법은 시스템 장애가 발생했을 때 데이터베이스를 복구하는 데 필요한 데이터를 디스크에 기록한다.
-- 사용 시점: 주기적으로 또는 시스템 종료 시점에서 DB의 일관성을 유지하기 위해 사용된다.
-
-
+- InnoDB는 주기적으로 체크포인트를 생성하여, 특정 시점까지의 데이터 변경 사항을 모두 디스크에 기록한다.
+- 이를 통해 시스템 장애 시 체크포인트 이후의 데이터만 복구하면 되므로, DB의 빠르고 안전한 복구가 가능하다.
+- 사용 시점: 주기적으로 or 시스템 종료 시점에서 DB의 일관성을 유지하기 위해 사용된다.
 
 
 
 #### MySQL 의 비정상 종료가 일어난 경우 InnoDB 스토리지 엔진의 데이터 파일은 두 가지 종류의 일관되지 않은 데이터를 가질 수 있고 각각 다르게 해결한다.
 1. Commit 됐지만 데이터 파일에 기록되지 않은 데이터 : Redo log
 2. Rollback 됐지만 데이터 파일에 이미 기록된 데이터 : Redo log + Undo log(변경되기 전 데이터를 알아야 하므로)
+
+
 
 
 

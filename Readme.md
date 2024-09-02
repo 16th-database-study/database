@@ -2,11 +2,24 @@
 
 ![img.png](img/readme_main/action.png)
 
-- 1주차. SQL 쿼리와 정규화(반정규화)
-- 2주차. B-Tree와 인덱스
-- 3주차. 쿼리 실행 계획
-- 4주차. 트랜잭션과 락
-- 5주차. 로그와 BufferPool
+- Chapter1. SQL 쿼리와 정규화(반정규화)<br>
+  https://github.com/16th-database-study/database/tree/main/chapter5/source
+
+
+- Chapter2. B-Tree와 인덱스<br>
+  https://github.com/16th-database-study/database/tree/main/chapter2/source
+
+
+- Chapter3. 쿼리 실행 계획<br>
+  https://github.com/16th-database-study/database/tree/main/chapter3
+
+
+- Chapter4. 트랜잭션과 락<br>
+  https://github.com/16th-database-study/database/tree/main/chapter4/source
+
+
+- Chapter5. 로그와 BufferPool<br>
+  https://github.com/16th-database-study/database/tree/main/chapter5
 
 # 2. 활동 관련 규칙
 ## 2.1 매주 활동 내역

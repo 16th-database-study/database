@@ -16,7 +16,7 @@ SQL 옵티마이저는 작업을 가장 효율적으로 수행할 수 있는 최
 
 ### (1) 테이블 통계 (**mysql.innodb_table_stats)**
 
-[| 통계항목 | 설명 |
+[ 통계항목 | 설명 |
 | --- | --- |
 | DATABASE_NAME | 데이터베이스의 이름 |
 | TABLE_NAME | 테이블의 이름 |
@@ -24,7 +24,7 @@ SQL 옵티마이저는 작업을 가장 효율적으로 수행할 수 있는 최
 | N_ROWS | 테이블 전체 레코드 건수 |
 | CLUSTERED_INDEX_SIZE | 기본 인덱스(클러스터 인덱스)가 차지하는 페이지 수 |
 | SUM_OF_OTHER_INDEX_SIZES | 기본 인덱스를 제외한 인덱스들이 차지하는 페이지 수의 총합 |
-]()
+
 ### (2) 인덱스 통계 (**mysql.innodb_index_stats)**
 
 | 통계항목 | 설명 |
